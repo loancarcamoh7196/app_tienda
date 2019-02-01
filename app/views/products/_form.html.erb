@@ -1,0 +1,55 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title, class: 'label' %>
+    <div class="control">
+      <%= form.text_field :title, class: 'input' %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, class: 'label' %>
+    <%= form.text_area :description, class: 'textarea' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image, class: 'label' %>
+    <div class="control">
+      <%= form.text_field :image, class:'input' %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :value, class: 'label' %>
+    <div class="control">
+      <%= form.text_field :value, class: 'input' %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :size, class: 'label' %>
+    <div class="control">
+      <%= form.text_field :size, class: 'input' %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :availability, class: 'checkbox' %>
+    <%= form.check_box :availability, class: 'checkbox' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit ' Enviar '.html_safe, class: 'button is-success is-outlined' %>
+  </div>
+<% end %>

@@ -1,0 +1,40 @@
+<% if notice.present? %>
+  <p class="notification" id="notice">
+    <%= notice %>
+  </p>
+<% end %>
+
+<section class="section">
+  <p>
+    <strong class="">Title:</strong>
+    <%= @product.title %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @product.description %>
+  </p>
+
+  <p>
+    <strong>Image:</strong>
+    <%= @product.image %>
+  </p>
+
+  <p>
+    <strong>Value:</strong>
+    <%= @product.value %>
+  </p>
+
+  <p>
+    <strong>Size:</strong>
+    <%= @product.size %>
+  </p>
+
+  <p>
+    <strong>Availability:</strong>
+    <%= @product.availability ? '<label class= "tag is-success"> Yes </label>'.html_safe :  '<label class= "tag is-danger"> No </label>'.html_safe %>
+  </p>
+</section>
+
+<%= link_to 'Edit', edit_product_path(@product), class: 'button is-info is-outlined' %> |
+<%= link_to 'Back', products_path, class: 'button is-warning is-outlined' %>
