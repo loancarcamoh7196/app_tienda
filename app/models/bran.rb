@@ -1,2 +1,0 @@
-class Bran < ApplicationRecord
-end
