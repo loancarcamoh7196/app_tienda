@@ -24,6 +24,7 @@
         <td><%= product.value %></td>
         <td><%= product.size %></td>
         <td><%= product.availability ? '<label class= "tag is-success"> Yes </label>'.html_safe :  '<label class= "tag is-danger"> No </label>'.html_safe %></td>
+        <td> <input type="color" value="<%= product.color %>" > </td>
         <td><%= link_to '<i class="fas fa-info-circle"></i>'.html_safe, product, class: 'button is-info', title: 'Show' %></td>
         <td><%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe, edit_product_path(product), class: 'button is-warning', title: 'Edit' %></td>
         <td><%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-danger', title: 'Destroy' %></td>
