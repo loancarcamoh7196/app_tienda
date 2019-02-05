@@ -3,15 +3,25 @@
 one:
   title: MyString
   description: MyText
-  image: MyString
-  value: 1.5
-  size: MyString
+  image: 
   availability: false
+  value: 1.5
+  offer_value: 1.5
+  dcto: 1.5
+  brand: one
+  category: one
+  model: MyString
+  material: one
 
 two:
   title: MyString
   description: MyText
-  image: MyString
-  value: 1.5
-  size: MyString
+  image: 
   availability: false
+  value: 1.5
+  offer_value: 1.5
+  dcto: 1.5
+  brand: two
+  category: two
+  model: MyString
+  material: two

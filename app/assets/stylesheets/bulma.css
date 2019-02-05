@@ -376,6 +376,9 @@ img {
   height: auto;
   max-width: 100%;
 }
+.img-min {
+  height: 10vh !important;
+}
 
 input[type="checkbox"],
 input[type="radio"] {

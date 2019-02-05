@@ -23,24 +23,50 @@
     <%= form.text_area :description, class: 'textarea' %>
   </div>
 
-  <div class="field">
-    <%= form.label :image, class: 'label' %>
+  <div class="field ">
+     <%= form.label :image, class: 'label' %>
     <div class="control">
       <%= form.text_field :image, class:'input' %>
-    </div>
+     </div>
   </div>
 
-  <div class="field">
-    <%= form.label :value, class: 'label' %>
-    <div class="control">
-      <%= form.text_field :value, class: 'input' %>
+  <div class="columns">
+    
+
+    <div class="field column">
+      <%= form.label :value, class: 'label' %>
+      <div class="control">
+        <%= form.number_field :value, class: 'input', step: '0.01' %>
+      </div>
+    </div>
+
+    <div class="field column">
+      <%= form.label :offer_value, class: 'label' %>
+      <div class="control">
+        <%= form.number_field :offer_value, class: 'input', step: '0.01' %>
+      </div>
+    </div>
+
+    <div class="field column">
+      <%= form.label :dcto, class: 'label' %>
+      <div class="control">
+        <%= form.text_field :dcto, class: 'input' %>
+      </div>
+    </div>
+
+    <div class="field column">
+      <%= form.label :offer, class: 'label' %>
+      <%= form.check_box :offer, class: 'checkbox' %>
     </div>
   </div>
+  
+
+  
 
   <div class="field">
-    <%= form.label :size, class: 'label' %>
+    <%= form.label :model, class: 'label' %>
     <div class="control">
-      <%= form.text_field :size, class: 'input' %>
+      <%= form.text_field :model, class: 'input' %>
     </div>
   </div>
 
