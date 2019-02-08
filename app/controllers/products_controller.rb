@@ -60,7 +60,8 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
+      flash[:danger] = "Product selected was deleted... "
+      format.html { redirect_to products_url}
       format.json { head :no_content }
     end
   end
