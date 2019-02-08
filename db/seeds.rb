@@ -43,4 +43,54 @@ brands.each do |b|
     )
 end
 
+Category.destroy_all
+categories = [
+    {
+        name: 'Women',
+        description: ''
+    },
+    {
+        name: 'Men',
+        description: ''
+    },
+    {
+        name: 'Sale',
+        description: 'Sales of de sesson'
+    },
+    {
+        name: 'Accessories',
+        description: ''
+    },
+    {
+        name: 'Toys',
+        description: ''
+    },
+    {
+        name: 'Bookshop',
+        description: ''
+    },
+    {
+        name: 'Tecnologies',
+        description: ''
+    },
+    {
+        name: 'Stationery',
+        description: ''
+    }
+]
 
+categories.each do |c|
+    Category.create(
+        name: c[:name],
+        description: c[:description]
+    )
+end
+
+#Material.destroy_all
+#materials = []
+
+#materials.each do |m|
+#    Material.create(
+#        
+#    )
+#end

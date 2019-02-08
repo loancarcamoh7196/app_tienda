@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Categories</h1>
+<h1 class="title">Categories</h1>
 
-<table>
+<table class="table is-fullwidth">
   <thead>
     <tr>
       <th>Name</th>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= category.name %></td>
         <td><%= category.description %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '<i class="fas fa-info-circle"></i>'.html_safe, category, title: 'Show', class:'button is-info' %></td>
+        <td><%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe, edit_category_path(category), title: 'Edit', class: 'button is-warning' %></td>
+        <td><%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, category, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete', class: 'button is-danger' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Category', new_category_path %>
+<%= link_to 'New Category', new_category_path, class: 'button is-success is-outlined' %>

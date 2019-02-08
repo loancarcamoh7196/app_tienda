@@ -14,23 +14,26 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
+    @brands = Brand.all.pluck(:name, :id)
     @product = Product.new
   end
 
   # GET /products/1/edit
   def edit
+    @brands = Brand.all.pluck(:name, :id)
   end
 
   # POST /products
   # POST /products.json
   def create
     @product = Product.new(product_params)
-
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        flash[:success] = "Product was sucessfully created."
+        format.html { redirect_to @product}
         format.json { render :show, status: :created, location: @product }
       else
+        flash[:danger] = "Product wasn't added to system."
         format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
@@ -42,7 +45,8 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        flash[:warning] = 'Product was successfully updated.'
+        format.html { redirect_to @product }
         format.json { render :show, status: :ok, location: @product }
       else
         format.html { render :edit }
@@ -68,7 +72,7 @@ class ProductsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def product_params
-      params.require(:product).permit(:title, :description, :image, :avaibility, :value, :offer_value, :dcto, :offer, :brand_id, :category_id, :material, :model,  :availability)
-    end
+  def product_params
+    params.require(:product).permit(:title, :description, :image, :avaibility, :value, :offer_value, :dcto, :offer,  :material, :model, :brand_id,  :availability)
+  end
 end
