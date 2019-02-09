@@ -1,7 +1,14 @@
-<p id="notice"><%= notice %></p>
-
 <h1 class="title">Products</h1>
-
+<div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd">
+  
+    <div class="column">  </div>
+    <div class="column">  </div>
+    <div class="column">
+      <%= link_to '<i class="fas fa-plus"></i> New Product'.html_safe, new_product_path, class: 'button is-success is-outlined' %>
+    </div>
+  
+</div>
+<hr>
 <table class="table is-fullwidth">
   <thead class="thead"> 
     <tr>
@@ -40,4 +47,4 @@
 
 <br>
 
-<%= link_to '<i class="fas fa-plus"></i> New Product'.html_safe, new_product_path, class: 'button is-success is-outlined' %>
+

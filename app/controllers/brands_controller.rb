@@ -28,7 +28,8 @@ class BrandsController < ApplicationController
 
     respond_to do |format|
       if @brand.save
-        format.html { redirect_to @brand, notice: 'Brand was successfully created.' }
+        flash[:sucess] = 'Brand creation successfull... '
+        format.html { redirect_to @brand }
         format.json { render :show, status: :created, location: @brand }
       else
         format.html { render :new }
@@ -42,7 +43,8 @@ class BrandsController < ApplicationController
   def update
     respond_to do |format|
       if @brand.update(brand_params)
-        format.html { redirect_to @brand, notice: 'Brand was successfully updated.' }
+        flash[:warning] = 'Brand updated successfull... '
+        format.html { redirect_to @brand }
         format.json { render :show, status: :ok, location: @brand }
       else
         format.html { render :edit }
@@ -56,7 +58,8 @@ class BrandsController < ApplicationController
   def destroy
     @brand.destroy
     respond_to do |format|
-      format.html { redirect_to brands_url, notice: 'Brand was successfully destroyed.' }
+      flash[:danger] = 'Brand was successfully destroyed.'
+      format.html { redirect_to brands_url }
       format.json { head :no_content }
     end
   end
